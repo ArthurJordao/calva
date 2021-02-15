@@ -6,21 +6,23 @@
                 "out"]
 
  :builds       {:calva-lib
-                {:target    :node-library
-                 :exports   {:formatText calva.fmt.formatter/format-text-bridge
-                             :formatTextAtRange calva.fmt.formatter/format-text-at-range-bridge
-                             :formatTextAtIdx calva.fmt.formatter/format-text-at-idx-bridge
-                             :formatTextAtIdxOnType calva.fmt.formatter/format-text-at-idx-on-type-bridge
-                             :cljfmtOptions calva.fmt.formatter/read-cljfmt-js-bridge
-                             :inferIndents calva.fmt.inferer/infer-indents-bridge
-                             :inferParens calva.fmt.inferer/infer-parens-bridge
-                             :jsify calva.js-utils/jsify
-                             :cljify calva.js-utils/cljify
-                             :prettyPrint calva.pprint.printer/pretty-print-js-bridge
-                             :parseEdn calva.parse/parse-edn-js-bridge
-                             :parseForms calva.parse/parse-forms-js-bridge
-                             :activateLsp calva.lsp/activate}
-                 :output-to "out/cljs-lib/cljs-lib.js"}
+                {:target    :esm
+                 :output-dir "out/cljs-lib"
+                 :modules
+                 {:main
+                  {:exports   {:formatText calva.fmt.formatter/format-text-bridge
+                               :formatTextAtRange calva.fmt.formatter/format-text-at-range-bridge
+                               :formatTextAtIdx calva.fmt.formatter/format-text-at-idx-bridge
+                               :formatTextAtIdxOnType calva.fmt.formatter/format-text-at-idx-on-type-bridge
+                               :cljfmtOptions calva.fmt.formatter/read-cljfmt-js-bridge
+                               :inferIndents calva.fmt.inferer/infer-indents-bridge
+                               :inferParens calva.fmt.inferer/infer-parens-bridge
+                               :jsify calva.js-utils/jsify
+                               :cljify calva.js-utils/cljify
+                               :prettyPrint calva.pprint.printer/pretty-print-js-bridge
+                               :parseEdn calva.parse/parse-edn-js-bridge
+                               :parseForms calva.parse/parse-forms-js-bridge
+                               :activateLsp calva.lsp/activate}}}}
                 :test
                 {:target    :node-test
                  :output-to "out/cljs-lib/test/cljs-lib-tests.js"
