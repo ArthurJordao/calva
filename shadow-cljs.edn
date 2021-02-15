@@ -7,6 +7,8 @@
 
  :builds       {:calva-lib
                 {:target    :esm
+                 :js-options {:keep-as-require #{"vscode"}
+                              :keep-native-requires true}
                  :output-dir "out/cljs-lib"
                  :modules
                  {:main

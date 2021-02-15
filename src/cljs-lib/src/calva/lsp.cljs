@@ -1,10 +1,10 @@
 (ns calva.lsp
-  (:require ["esm:vscode" :as vscode]
-            ["esm:vscode-languageclient" :refer [LanguageClient]]
+  (:require ["vscode" :as vscode]
+            ["vscode-languageclient" :refer [LanguageClient]]
             ["path" :as path]
             [cljs.core.async :refer [go]]
             [cljs.core.async.interop :refer-macros [<p!]]
-            ["esm:/state.js" :as state]))
+            #_["esm:../state.js" :as state]))
 
 (defn create-client [jarPath]
   (let [server-options {:run {:command "java"

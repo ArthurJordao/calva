@@ -2,7 +2,7 @@ import * as net from "net";
 import { BEncoderStream, BDecoderStream } from "./bencode";
 import * as state from './../state';
 import * as util from '../utilities';
-import { prettyPrint } from '../../out/cljs-lib/main.js';
+const { prettyPrint } = require('../../out/cljs-lib/main.js');
 import { PrettyPrintingOptions, disabledPrettyPrinter, getServerSidePrinter } from "../printer";
 import * as debug from "../debugger/calva-debug";
 import * as vscode from 'vscode';
